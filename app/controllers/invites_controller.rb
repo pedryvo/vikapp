@@ -1,25 +1,20 @@
 class InvitesController < ApplicationController
   before_action :set_invite, only: %i[ show edit update destroy ]
 
-  # GET /invites or /invites.json
   def index
     @invites = Invite.all
   end
 
-  # GET /invites/1 or /invites/1.json
   def show
   end
 
-  # GET /invites/new
   def new
     @invite = Invite.new
   end
 
-  # GET /invites/1/edit
   def edit
   end
 
-  # POST /invites or /invites.json
   def create
     @invite = Invite.new(invite_params)
 
@@ -34,7 +29,6 @@ class InvitesController < ApplicationController
     end
   end
 
-  # PATCH/PUT /invites/1 or /invites/1.json
   def update
     respond_to do |format|
       if @invite.update(invite_params)
@@ -47,7 +41,6 @@ class InvitesController < ApplicationController
     end
   end
 
-  # DELETE /invites/1 or /invites/1.json
   def destroy
     @invite.destroy!
 
@@ -58,13 +51,11 @@ class InvitesController < ApplicationController
   end
 
   private
-    # Use callbacks to share common setup or constraints between actions.
     def set_invite
       @invite = Invite.find(params.expect(:id))
     end
 
-    # Only allow a list of trusted parameters through.
     def invite_params
-      params.expect(invite: [ :admin_id, :company_id, :deactivated_at ])
+      params.expect(invite: [ :admin_id, :company_id ])
     end
 end
