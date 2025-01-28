@@ -54,9 +54,6 @@ group :development, :test do
   gem "faker", "~> 3.5"
   gem "rails-controller-testing"
   gem "pry"
-end
-
-group :test do
   gem "shoulda-matchers", "~> 6.0"
 end
 
@@ -64,6 +61,5 @@ group :development do
   # Use console on exceptions pages [https://github.com/rails/web-console]
   gem "web-console"
 end
-
 
 gem "devise", "~> 4.9.4"

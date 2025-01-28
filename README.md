@@ -1,24 +1,31 @@
-# README
+# VikApp
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+## To build the application using Docker Compose:
 
-Things you may want to cover:
+1. Make sure you have Docker and Docker Compose installed on your machine.
 
-* Ruby version
+2. Navigate to the root directory of the project.
 
-* System dependencies
+3. Run the following command to build the services defined in `docker-compose.yml`:
 
-* Configuration
+```sh
+docker compose build
+```
 
-* Database creation
+4. Run the following command to create, migrate and seed database:
 
-* Database initialization
+```sh
+docker compose run --rm web bin/rails db:create db:migrate db:seed
+```
 
-* How to run the test suite
+5. Run the following command to run tests:
 
-* Services (job queues, cache servers, search engines, etc.)
+```sh
+docker compose run --rm web bundle exec rspec
+```
 
-* Deployment instructions
+6. Run the following command to run app:
 
-* ...
+```sh
+docker compose up
+```
