@@ -9,24 +9,25 @@
  * Consider organizing styles into separate files for maintainability.
  */
 
- .notice {
+.notice {
   color: green;
   margin-bottom: 16px;
 }
 
- .invite-container {
-  display: flex;
-  flex-direction: column;
-  border: 1px solid #ccc;
-  padding: 16px;
-  margin-bottom: 16px;
-  border-radius: 8px;
+.invite-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-bottom: 1em;
 }
 
-.invite-item {
-  display: flex;
-  justify-content: center;
-  margin-bottom: 8px;
+.invite-table td {
+  padding: 0.5em;
+  border: 1px solid #ddd;
+}
+
+.invite-table td strong {
+  display: inline-block;
+  width: 100px;
 }
 
 .btn {

@@ -1,16 +1,16 @@
-<div id="<%= dom_id invite %>" class="invite-container">
-  <p class="invite-item">
-    <strong>Admin:</strong>
-    <%= Admin.find(invite.admin_id).email %>
-  </p>
+<table id="<%= dom_id invite %>" class="invite-table">
+  <tr>
+    <td><strong>Admin:</strong></td>
+    <td><%= Admin.find(invite.admin_id).email %></td>
+  </tr>
+  <tr>
+    <td><strong>Company:</strong></td>
+    <td><%= Company.find(invite.company_id).name %></td>
+  </tr>
+  <tr>
+    <td><strong>Deactivated at:</strong></td>
+    <td><%= invite.deactivated_at %></td>
+  </tr>
+</table>
 
-  <p class="invite-item">
-    <strong>Company:</strong>
-    <%= Company.find(invite.company_id).name %>
-  </p>
-
-  <p class="invite-item">
-    <strong>Deactivated at:</strong>
-    <%= invite.deactivated_at %>
-  </p>
-</div>
+<br>
