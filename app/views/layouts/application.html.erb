@@ -23,6 +23,9 @@
   </head>
 
   <body>
+    <% if admin_signed_in? %>
+      <%= button_to "Logout", destroy_admin_session_path, method: :delete, class: 'btn btn-warning'  %>
+    <% end %>
     <p class="notice"><%= notice %></p>
     <p class="alert"><%= alert %></p>
     <%= link_to "Home", root_path, class: 'btn btn-primary' %>

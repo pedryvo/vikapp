@@ -7,9 +7,9 @@ Rails.application.routes.draw do
 
   resources :companies
 
-  resources :admins, only: [ :index, :show, :new, :create, :edit, :update, :destroy ]
-
   devise_for :admins
+
+  resources :admins, only: [ :index, :show, :new, :create, :edit, :update, :destroy ]
 
   get "up" => "rails/health#show", as: :rails_health_check
 

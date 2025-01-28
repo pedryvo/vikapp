@@ -1,5 +1,9 @@
 <table id="<%= dom_id invite %>" class="invite-table">
   <tr>
+    <td><strong>Name:</strong></td>
+    <td><%= invite.name %></td>
+  </tr>
+  <tr>
     <td><strong>Admin:</strong></td>
     <td><%= Admin.find(invite.admin_id).email %></td>
   </tr>

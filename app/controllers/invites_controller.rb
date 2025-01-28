@@ -3,6 +3,9 @@ class InvitesController < ApplicationController
 
   def index
     @invites = Invite.all
+    @invites = @invites.active_in_month(params[:month].to_i) if params[:month].present?
+    @invites = @invites.where("name LIKE ?", "%#{params[:name]}%") if params[:name].present?
+    @invites = @invites.where(company_id: params[:company_id]) if params[:company_id].present?
   end
 
   def show

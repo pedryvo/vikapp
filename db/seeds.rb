@@ -34,10 +34,10 @@ Admin.all.each do |admin|
   Company.all.each do |company|
     Invite.find_or_create_by!(
       admin: admin,
-      company: company
+      company: company,
+      name: Faker::Lorem.sentences(number: 1)
     )
   end
 end
 
-Invite.last(2).first.update(deactivated_at: 1.month.from_now)
-Invite.last.update(deactivated_at: 2.month.from_now)
+Invite.last(2).each { |invite| invite.update(deactivated_at: 1.month.from_now) }

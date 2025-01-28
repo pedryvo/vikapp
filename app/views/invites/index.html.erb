@@ -4,6 +4,26 @@
 
 <h1>Invites</h1>
 
+<%= form_with url: invites_path, method: :get, local: true do %>
+  <div class="field">
+    <div class="field">
+      <%= label_tag :name, "Name" %>
+      <%= text_field_tag :name, params[:name] %>
+    </div>
+    <br>
+    <div class="field">
+      <%= label_tag :company_id, "Company" %>
+      <%= select_tag :company_id, options_from_collection_for_select(Company.all, :id, :name, params[:company_id]), include_blank: true %>
+    </div>
+    <br>
+    <%= label_tag :month, "Month" %>
+    <%= select_tag :month, options_for_select(Date::MONTHNAMES.compact.each_with_index.map { |name, index| [name, index + 1] }, params[:month]), include_blank: true %>
+  </div>
+  <div class="actions">
+    <%= submit_tag "Filter", class: "btn btn-primary" %>
+  </div>
+<% end %>
+
 <div id="invites">
   <% @invites.each do |invite| %>
     <div>

@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[8.0].define(version: 2025_01_27_234951) do
+ActiveRecord::Schema[8.0].define(version: 2025_01_28_123055) do
   create_table "admins", force: :cascade do |t|
     t.string "email", default: "", null: false
     t.string "encrypted_password", default: "", null: false
@@ -35,6 +35,7 @@ ActiveRecord::Schema[8.0].define(version: 2025_01_27_234951) do
     t.datetime "deactivated_at"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string "name"
     t.index ["admin_id"], name: "index_invites_on_admin_id"
     t.index ["company_id"], name: "index_invites_on_company_id"
   end
