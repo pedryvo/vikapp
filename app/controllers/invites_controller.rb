@@ -1,5 +1,5 @@
 class InvitesController < ApplicationController
-  before_action :set_invite, only: %i[ show edit update destroy ]
+  before_action :set_invite, only: %i[ show edit update destroy deactivate ]
 
   def index
     @invites = Invite.all
@@ -47,6 +47,22 @@ class InvitesController < ApplicationController
     respond_to do |format|
       format.html { redirect_to invites_path, status: :see_other, notice: "Invite was successfully destroyed." }
       format.json { head :no_content }
+    end
+  end
+
+  def deactivate
+    if @invite.deactivated_at.nil?
+      @invite.update(deactivated_at: Time.current)
+
+      respond_to do |format|
+        format.html { redirect_to invites_path, notice: "Invite was successfully deactivated." }
+        format.json { render :show, status: :ok, location: @invite }
+      end
+    else
+      respond_to do |format|
+        format.html { redirect_to invites_path, notice: "Invite was already deactivated." }
+        format.json { render :show, status: :ok, location: @invite }
+      end
     end
   end
 

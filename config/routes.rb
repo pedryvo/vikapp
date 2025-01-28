@@ -1,5 +1,10 @@
 Rails.application.routes.draw do
-  resources :invites
+  resources :invites do
+    member do
+      patch :deactivate
+    end
+  end
+
   resources :companies
   devise_for :admins
 

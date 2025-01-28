@@ -3,8 +3,9 @@
 <%= render @invite %>
 
 <div>
-  <%= link_to "Edit this invite", edit_invite_path(@invite) %> |
-  <%= link_to "Back to invites", invites_path %>
+  <%= link_to "Edit this invite", edit_invite_path(@invite), class: 'btn' %> |
+  <%= link_to "Back to invites", invites_path, class: 'btn' %> |
+  <%= button_to "Deactivate this invite", deactivate_invite_path(@invite), method: :patch, class: 'btn btn-warning' %>
 
-  <%= button_to "Destroy this invite", @invite, method: :delete %>
+  <%= button_to "Destroy this invite", @invite, method: :delete, class: 'btn btn-primary' %>
 </div>
