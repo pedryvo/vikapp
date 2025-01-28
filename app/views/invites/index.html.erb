@@ -1,4 +1,4 @@
-<p style="color: green"><%= notice %></p>
+<p class="notice"><%= notice %></p>
 
 <% content_for :title, "Invites" %>
 
@@ -6,11 +6,13 @@
 
 <div id="invites">
   <% @invites.each do |invite| %>
-    <%= render invite %>
-    <p>
-      <%= link_to "Show this invite", invite %>
-    </p>
+    <div>
+      <%= render invite %>
+      <p>
+        <%= link_to "Show this invite", invite, class: "btn" %>
+      </p>
+    </div>
   <% end %>
 </div>
 
-<%= link_to "New invite", new_invite_path %>
+<%= link_to "New invite", new_invite_path, class: "btn btn-primary" %>

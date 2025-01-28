@@ -8,9 +8,9 @@
   <% @companies.each do |company| %>
     <%= render company %>
     <p>
-      <%= link_to "Show this company", company %>
+      <%= link_to "Show this company", company, class: 'btn' %>
     </p>
   <% end %>
 </div>
 
-<%= link_to "New company", new_company_path %>
+<%= link_to "New company", new_company_path, class: 'btn btn-primary' %>

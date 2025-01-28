@@ -13,17 +13,12 @@
 
   <div>
     <%= form.label :admin_id, style: "display: block" %>
-    <%= form.text_field :admin_id %>
+    <%= form.collection_select :admin_id, Admin.all, :id, :email, prompt: "Select an User" %>
   </div>
 
   <div>
     <%= form.label :company_id, style: "display: block" %>
-    <%= form.text_field :company_id %>
-  </div>
-
-  <div>
-    <%= form.label :deactivated_at, style: "display: block" %>
-    <%= form.datetime_field :deactivated_at %>
+    <%= form.collection_select :company_id, Company.all, :id, :name, prompt: "Select a Company" %>
   </div>
 
   <div>

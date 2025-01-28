@@ -8,3 +8,38 @@
  *
  * Consider organizing styles into separate files for maintainability.
  */
+
+ .notice {
+  color: green;
+  margin-bottom: 16px;
+}
+
+ .invite-container {
+  display: flex;
+  flex-direction: column;
+  border: 1px solid #ccc;
+  padding: 16px;
+  margin-bottom: 16px;
+  border-radius: 8px;
+}
+
+.invite-item {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 8px;
+}
+
+.btn {
+  display: inline-block;
+  padding: 8px 16px;
+  margin-top: 8px;
+  text-decoration: none;
+  color: #fff;
+  background-color: #007bff;
+  border-radius: 4px;
+  text-align: center;
+}
+
+.btn-primary {
+  background-color: #28a745;
+}
